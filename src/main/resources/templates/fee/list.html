@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+
+				<!-- Header -->
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Pretitle -->
+								<h6 class="header-pretitle">List Of</h6>
+
+								<!-- Title -->
+								<h1 class="header-title">Student Fee</h1>
+
+							</div>
+						</div>
+						<!-- / .row -->
+						<div class="row align-items-center">
+							<div class="col">
+
+								<!-- Nav -->
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- [[${teacherlist}]] -->
+				
+				<div class="card">
+				<div class="table-responsive">
+					<table class="table table-sm table-nowrap card-table">
+					<thead>
+						<tr>
+						
+						<th>Name</th>
+						<th>Deposite Fee</th>
+						<th>Due fee</th>
+						<th>Total fee</th>
+						<th>JoinedDate</th>
+						</tr>
+						</thead>
+						<tbody class="list">
+						<tr th:each="feemanagement: ${feelist}">
+							
+							<td class="orders-status" th:text="${feemanagement.getName()}"></td>
+							<td class="orders-status" th:text="${feemanagement.getDepfee()}"></td>
+							<td class="orders-status" th:text="${feemanagement.getDuefee()}"></td>
+							<td class="orders-status" th:text="${feemanagement.getTotalfee()}"></td>
+							<td class="orders-status" th:text="${feemanagement.getJoinedDate()}"></td>
+							<!-- <td>
+							<form th:action="@{/fee/show}">
+							<input type="hidden" name="name" th:value="${feemanagement.getName()}"/>
+							<button type="submit">Show</button>
+							</form>
+							</td> -->
+							
+						</tr>
+						</tbody>
+
+					</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+</body>
+</html>
